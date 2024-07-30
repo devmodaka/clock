@@ -1,38 +1,112 @@
-.App {
+header {
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+#container {
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: block;
+  background-color: darkolivegreen;
+}
+
+.length-control {
+  margin: 0 240px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#session-label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  margin-bottom: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.length {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#break-label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  margin-bottom: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0 10px;
+  width: 50px;
+  align-content: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 4px 7px 0px;
+  border: none;
+  border-radius: 5px;
+}
+
+#break-length {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#session-length {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.timer {
+  background-color: rgb(247, 248, 249);
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.timer-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#time-left {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 55px;
+}
+
+#timer-label {
+  font-size: 35px;
+  text-align: center;
+}
+
+#start_stop {
+  margin: 0 5px 0 0;
+  padding: 8px;
+  font-size: 32px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 10px;
+}
+
+#reset {
+  margin: 0 0 0 20px;
+  padding: 8px;
+  font-size: 20px;
+  background-color: rgb(242, 124, 148);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 10px;
 }
