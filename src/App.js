@@ -4,10 +4,10 @@ import "./App.css";
 export default function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
-  const [timeLeft, setTimeLeft] = useState(26 * 60);
+  const [timeLeft, setTimeLeft] = useState(25 * 60);
   const [timerLabel, setTimerLabel] = useState("Session");
   const [isRunning, setIsRunning] = useState(false);
-  const [intervalid, setIntervalid] = useState(null);
+  const [intervalId, setIntervalId] = useState(null);
 
   const incrementBreak = () => setBreakLength((prev) => Math.min(prev + 1, 60));
   const decrementBreak = () => setBreakLength((prev) => Math.max(prev - 1, 1));
@@ -24,7 +24,7 @@ export default function App() {
 
   const reset = () => {
     setIsRunning(false);
-    clearInterval(intervalid);
+    clearInterval(intervalId);
     setBreakLength(5);
     setSessionLength(25);
     setTimeLeft(25 * 60);
@@ -37,22 +37,23 @@ export default function App() {
   const startStop = () => {
     if (isRunning) {
       setIsRunning(false);
-      clearInterval(intervalid);
+      clearInterval(intervalId);
     } else {
       setIsRunning(true);
-      const newIntervalid = setInterval(() => {
+      const newIntervalId = setInterval(() => {
         setTimeLeft(prev => {
           if (prev === 0) {
             const newLabel = timerLabel === "Session" ? "Break" : "Session";
             const newTime = timerLabel === "Session" ? breakLength * 60 : sessionLength * 60;
             setTimerLabel(newLabel);
+            setTimeLeft(newTime);
             playBeep();
             return newTime;
           }
           return prev - 1;
         });
       }, 1000);
-      setIntervalid(newIntervalid);
+      setIntervalId(newIntervalId);
     }
   };
   
@@ -70,9 +71,7 @@ export default function App() {
     const formatTime = (time) => {
       const minutes = Math.floor(time / 60);
       const seconds = time % 60;
-      return `${minutes.toString().padStart(2, "0")}:${seconds
-        .toString()
-        .padStart(2, "0")}`;
+      return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
     };
 
     return (
